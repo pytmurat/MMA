@@ -32,13 +32,26 @@ def kategoryView(request,kategory_slug):
     }
 
     return render(request,"kategory.html",contex)
-
 def detayPage(request,pk):
     model = get_object_or_404(PhoneModel,pk=pk)
-
+    stokadeti = PhoneModel.objects.only("stok").count()
+   
     return render(request,"shop-detail.html",{
-        "model":model
+        "model":model,
+        "stokadeti":stokadeti,
     })
+
+def search(request):
+    model = PhoneModel.objects.filter(name__contains = request.GET["search"])
+
+
+    return render(request,"shop.html",{
+        "model":model,
+        
+
+        })
+
+
 
 
 

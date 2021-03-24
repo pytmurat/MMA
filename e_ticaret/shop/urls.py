@@ -6,5 +6,7 @@ urlpatterns = [
     path("",views.shopPage,name="shopPage"),
     path("kategory/<slug:kategory_slug>",views.kategoryView,name="kategorw"),
     path("detail/<int:pk>",views.detayPage,name="detay"),
+    path("search/",views.search,name="searchView"),
+
 
 ]

@@ -13,12 +13,12 @@ class PhoneModel(models.Model):
         verbose_name = "Telefon"
         verbose_name_plural ="Telefonlar"
 
-    bellekler = [("1","2 gb"),("2","4 gb"),("3","6 gb"),("4","8 gb")]
-    hafıza = [("1","16 gb"),("2","32"),("3","64"),("4","128"),("5","256")]
-    renkler = [("1","Siyah"),("2","Beyaz"),("3","Gold"),("4","Gri"),("5","Kırmızı")]
-    kamera = [("1","12"),("2","16"),("3","21")]
+    bellekler = [("2 gb","2 gb"),("4 gb","4 gb"),("6 gb","6 gb"),("8 gb","8 gb"),("12 gb","12 gb"),("16 gb","16 gb"),("32 gb","32 gb")]
+    hafıza = [("16 gb","16 gb"),("32 gb","32 gb"),("64 gb","64 gb"),("128 gb","128 gb "),("256 gb","256 gb"),("512 gb","512 gb")]
+    renkler = [("Siyah","Siyah"),("Beyaz","Beyaz"),("Gold","Gold"),("Gri","Gri"),("Kırmızı","Kırmızı"),("Gümüş","Gümüş"),("Grafit","Grafit"),("Pasifik Mavisi","Pasifik Mavisi"),("Yeşil","Yeşil"),("Mavi","Mavi"),("Uzay Grisi","Uzay Grisi"),("Gece Yeşili","Gece Yeşili"),("Mor","Mor"),("Sarı","Sarı"),("Rose Gold","Rose Gold"),("Pembe","Pembe")]
+    kamera = [("12 px","12 px"),("16 px","16 px"),("32 px","32 px"),("64 px","64 px"),("128 px","128 px")]
     name = models.CharField(max_length=100,verbose_name="isim")
-    renk = models.CharField(max_length=10,verbose_name="renk",choices=renkler,default=1)
+    renk = models.CharField(max_length=100,verbose_name="renk",choices=renkler,default=1)
     fiyat = models.PositiveIntegerField(verbose_name="fiyat")
     yeniFiyat = models.PositiveIntegerField(verbose_name="yeni Fiyat")
     hafıza = models.CharField(verbose_name="hafıza",choices=hafıza,default=1,max_length=20)
@@ -27,6 +27,8 @@ class PhoneModel(models.Model):
     image = models.ImageField(blank=True,null=True ,upload_to=r"C:\Users\windows\Desktop\django\e_ticaret\media")
     kategorys = models.ForeignKey(kategory,null=True,on_delete=models.DO_NOTHING)
     yayinda_mi = models.BooleanField(verbose_name="yaynda mı",default=True,null=True,blank=True)
+    aciklama = models.CharField(max_length=300,verbose_name="açıklama",null=True,blank=True)
+    stok = models.PositiveIntegerField(verbose_name="stok",null=True,blank=True)
 
 
 

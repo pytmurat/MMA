@@ -9,7 +9,7 @@ class KategoryModel(admin.ModelAdmin):
 
 
 class AdminModel(admin.ModelAdmin):
-    list_display = ("name","renk","fiyat","yeniFiyat","hafıza","bellek","kamera")
+    list_display = ("name","renk","fiyat","yeniFiyat","hafıza","bellek","kamera","stok")
 
 
 admin.site.register(PhoneModel,AdminModel)
