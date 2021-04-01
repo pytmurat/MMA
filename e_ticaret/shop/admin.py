@@ -9,7 +9,8 @@ class KategoryModel(admin.ModelAdmin):
 
 
 class AdminModel(admin.ModelAdmin):
-    list_display = ("name","renk","fiyat","yeniFiyat","hafıza","bellek","kamera","stok")
+    list_display = ("name","renk","fiyat","yeniFiyat","hafıza","bellek","kamera","stok","kazanc")
+    list_filter = ["kategorys"]
 
 
 admin.site.register(PhoneModel,AdminModel)

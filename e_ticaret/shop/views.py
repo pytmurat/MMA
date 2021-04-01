@@ -32,6 +32,8 @@ def kategoryView(request,kategory_slug):
     }
 
     return render(request,"kategory.html",contex)
+
+    
 def detayPage(request,pk):
     model = get_object_or_404(PhoneModel,pk=pk)
     stokadeti = PhoneModel.objects.only("stok").count()

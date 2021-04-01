@@ -35,6 +35,16 @@ class PhoneModel(models.Model):
 
     def __str__(self):
        return self.name
+    
+    @property
+    def kazanc(self):   
+        return (self.fiyat - self.yeniFiyat)
+
+    
+
+        
+
+
 
 
 
